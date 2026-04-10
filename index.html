@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>MK Travels — Premium Car Rental | P.Velur, Namakkal</title>
+<meta name="description" content="MK Travels – Trusted cab & car rental service from P.Velur, Namakkal. WagonR, Ertiga & more. ₹20/km onwards. Call 7402454545."/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Tiro+Tamil:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+/* ══ RESET ══ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --ink:#0A0E1A;
+  --ink2:#0F1422;
+  --ink3:#161C2D;
+  --ink4:#1E2640;
+  --ink5:#252E4A;
+  --azure:#1A6EFC;
+  --azure2:#4B93FF;
+  --azure3:#7DB5FF;
+  --azure-dim:rgba(26,110,252,0.12);
+  --azure-line:rgba(26,110,252,0.3);
+  --neon:#00F0C8;
+  --neon-dim:rgba(0,240,200,0.1);
+  --cream:#F4F7FF;
+  --cream2:#D8E2FF;
+  --white:#FFFFFF;
+  --text-muted:rgba(212,220,255,0.45);
+  --text-dim:rgba(212,220,255,0.65);
+  --shadow-azure:0 12px 50px rgba(26,110,252,0.25);
+  --shadow-dark:0 20px 60px rgba(0,0,0,0.5);
+  --tr:all 0.32s cubic-bezier(0.4,0,0.2,1);
+}
+html{scroll-behavior:smooth;font-size:16px;}
+body{background:var(--ink);color:var(--cream);font-family:'Outfit',sans-serif;font-weight:300;overflow-x:hidden;}
+img{display:block;max-width:100%;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:'Outfit',sans-serif;}
+input,textarea,select{font-family:'Outfit',sans-serif;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--ink);}
+::-webkit-scrollbar-thumb{background:var(--azure);border-radius:2px;}
+
+/* ══ PAGE SPA ══ */
+.page{display:none;min-height:100vh;}
+.page.active{display:block;}
+
+/* ══ NOISE TEXTURE ══ */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size:180px;opacity:0.35;
+}
+
+/* ══ NAV ══ */
+#main-nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  transition:background 0.4s,box-shadow 0.4s,padding 0.4s;
+  padding:1.4rem 0;
+}
+#main-nav.scrolled{
+  background:rgba(10,14,26,0.95);
+  backdrop-filter:blur(24px);
+  box-shadow:0 1px 0 var(--azure-line);
+  padding:0.85rem 0;
+}
+.nav-container{
+  max-width:1300px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.5rem;
+}
+.nav-logo{display:flex;align-items:center;gap:1rem;cursor:pointer;}
+.nav-logo img{height:48px;width:auto;object-fit:contain;}
+.nav-logo-text .brand{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--white);letter-spacing:0.03em;}
+.nav-logo-text .tagline{font-size:0.52rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--azure2);opacity:0.85;}
+.nav-links{display:flex;align-items:center;gap:0;list-style:none;}
+.nav-links li a,.nav-links li button{
+  background:none;border:none;color:rgba(212,220,255,0.65);
+  font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:500;
+  padding:0.5rem 0.95rem;transition:color 0.25s;position:relative;
+}
+.nav-links li a::after,.nav-links li button::after{
+  content:'';position:absolute;bottom:-2px;left:0.95rem;right:0.95rem;
+  height:2px;background:var(--azure);border-radius:2px;transform:scaleX(0);
+  transform-origin:left;transition:transform 0.3s;
+}
+.nav-links li a:hover,.nav-links li button:hover,
+.nav-links li a.active-link,.nav-links li button.active-link{color:var(--white);}
+.nav-links li a:hover::after,.nav-links li button:hover::after,
+.nav-links li a.active-link::after,.nav-links li button.active-link::after{transform:scaleX(1);}
+.nav-book{
+  background:var(--azure);color:var(--white);
+  border:none;padding:0.6rem 1.6rem;border-radius:50px;
+  font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;
+  transition:var(--tr);box-shadow:0 4px 20px rgba(26,110,252,0.35);
+}
+.nav-book:hover{background:var(--azure2);transform:translateY(-1px);box-shadow:0 8px 28px rgba(26,110,252,0.5);}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px;}
+.ham span{display:block;width:22px;height:2px;background:var(--cream);border-radius:2px;transition:var(--tr);}
+.mobile-drawer{
+  display:none;position:fixed;top:0;right:-100%;width:300px;height:100vh;
+  background:var(--ink2);border-left:1px solid var(--azure-line);
+  z-index:600;padding:5rem 2rem 2rem;transition:right 0.4s cubic-bezier(0.4,0,0.2,1);
+  flex-direction:column;
+}
+.mobile-drawer.open{right:0;display:flex;}
+.drawer-close{
+  position:absolute;top:1.5rem;right:1.5rem;
+  background:none;border:1px solid var(--azure-line);color:var(--azure2);
+  width:34px;height:34px;font-size:1rem;border-radius:6px;
+}
+.mobile-drawer a,.mobile-drawer button{
+  display:block;background:none;border:none;text-align:left;
+  color:rgba(212,220,255,0.7);font-size:0.82rem;letter-spacing:0.12em;
+  text-transform:uppercase;padding:1rem 0;
+  border-bottom:1px solid rgba(26,110,252,0.1);
+  transition:color 0.2s;width:100%;
+}
+.mobile-drawer a:hover,.mobile-drawer button:hover{color:var(--azure2);}
+.drawer-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:590;}
+.drawer-overlay.show{display:block;}
+
+/* ══ BUTTONS ══ */
+.btn-primary{
+  background:var(--azure);color:var(--white);border:none;
+  padding:0.95rem 2.5rem;border-radius:50px;
+  font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;
+  transition:var(--tr);display:inline-block;
+  box-shadow:0 6px 24px rgba(26,110,252,0.35);
+}
+.btn-primary:hover{background:var(--azure2);transform:translateY(-2px);box-shadow:var(--shadow-azure);}
+.btn-outline{
+  background:transparent;color:var(--cream);
+  border:1px solid rgba(212,220,255,0.25);padding:0.95rem 2.5rem;border-radius:50px;
+  font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;
+  transition:var(--tr);display:inline-block;
+}
+.btn-outline:hover{border-color:var(--azure);color:var(--azure2);}
+.btn-neon{
+  background:transparent;color:var(--neon);
+  border:1px solid var(--neon);padding:0.75rem 2rem;border-radius:50px;
+  font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:500;
+  transition:var(--tr);display:inline-block;
+}
+.btn-neon:hover{background:var(--neon);color:var(--ink);}
+
+/* ══ SHARED ══ */
+.section{padding:7rem 2rem;}
+.container{max-width:1300px;margin:0 auto;}
+.eyebrow{
+  font-size:0.65rem;letter-spacing:0.4em;text-transform:uppercase;
+  color:var(--neon);margin-bottom:1rem;display:flex;align-items:center;gap:0.8rem;
+}
+.eyebrow::before{content:'';width:24px;height:2px;background:var(--neon);border-radius:2px;}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.2rem,4.5vw,3.8rem);
+  font-weight:700;line-height:1.1;color:var(--white);
+  margin-bottom:1.4rem;
+}
+.section-title em{font-style:italic;color:var(--azure2);}
+.section-sub{font-size:0.9rem;line-height:1.95;color:var(--text-dim);max-width:520px;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.75s ease,transform 0.75s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.divider{width:48px;height:3px;background:linear-gradient(to right,var(--azure),var(--neon));border-radius:3px;margin:1.5rem 0;}
+.divider.center{margin-inline:auto;}
+
+/* ══ HERO ══ */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  position:relative;overflow:hidden;background:var(--ink);
+  padding-top:90px;
+}
+.hero-bg-grid{
+  position:absolute;inset:0;z-index:0;
+  background-image:
+    linear-gradient(rgba(26,110,252,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,110,252,0.06) 1px, transparent 1px);
+  background-size:60px 60px;
+}
+.hero-glow{
+  position:absolute;top:-10%;right:-5%;z-index:0;
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(26,110,252,0.18) 0%,transparent 65%);
+  animation:pulse 6s ease-in-out infinite;
+}
+.hero-glow2{
+  position:absolute;bottom:-20%;left:-10%;z-index:0;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,240,200,0.1) 0%,transparent 65%);
+  animation:pulse 8s ease-in-out infinite reverse;
+}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+.hero-inner{
+  position:relative;z-index:2;
+  max-width:1300px;margin:0 auto;padding:4rem 2.5rem 5rem;
+  display:grid;grid-template-columns:1fr 400px;gap:5rem;align-items:center;
+  width:100%;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:0.8rem;
+  font-size:0.65rem;letter-spacing:0.32em;text-transform:uppercase;
+  color:var(--neon);margin-bottom:1.8rem;
+  opacity:0;animation:fadeUp 0.8s 0.3s forwards;
+}
+.hero-eyebrow::before{content:'';width:28px;height:2px;background:var(--neon);border-radius:2px;display:block;}
+.hero-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.8rem,6vw,5.5rem);
+  font-weight:700;line-height:1.05;color:var(--white);
+  margin-bottom:1rem;
+  opacity:0;animation:fadeUp 0.9s 0.5s forwards;
+}
+.hero-title em{font-style:italic;color:var(--azure2);}
+.hero-title .tamil-line{
+  display:block;font-family:'Tiro Tamil',serif;
+  font-size:clamp(1rem,2vw,1.6rem);
+  color:rgba(0,240,200,0.6);margin-top:0.5rem;font-weight:400;
+}
+.hero-desc{
+  font-size:0.95rem;line-height:1.9;color:var(--text-dim);
+  max-width:480px;margin-bottom:2.5rem;
+  opacity:0;animation:fadeUp 0.9s 0.7s forwards;
+}
+.hero-cta{
+  display:flex;gap:1rem;flex-wrap:wrap;
+  opacity:0;animation:fadeUp 0.9s 0.9s forwards;
+}
+.hero-badges{
+  margin-top:3.5rem;display:flex;gap:0;flex-wrap:wrap;
+  opacity:0;animation:fadeUp 0.9s 1.1s forwards;
+  border:1px solid rgba(26,110,252,0.2);border-radius:12px;overflow:hidden;
+  max-width:fit-content;
+}
+.hbadge{
+  padding:1rem 1.5rem;border-right:1px solid rgba(26,110,252,0.2);
+}
+.hbadge:last-child{border-right:none;}
+.hbadge .n{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--azure2);line-height:1;}
+.hbadge .l{font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);margin-top:0.3rem;}
+
+/* Hero Panel */
+.hero-panel{
+  background:rgba(15,20,34,0.85);
+  border:1px solid rgba(26,110,252,0.25);
+  backdrop-filter:blur(24px);
+  padding:2.5rem;border-radius:20px;
+  opacity:0;animation:fadeLeft 0.9s 0.7s forwards;
+  box-shadow:0 20px 60px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.06);
+}
+@keyframes fadeLeft{from{opacity:0;transform:translateX(30px);}to{opacity:1;transform:translateX(0);}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.panel-title{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--white);margin-bottom:0.3rem;font-weight:700;}
+.panel-sub{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--azure2);margin-bottom:2rem;opacity:0.85;}
+.panel-field{margin-bottom:1.1rem;}
+.panel-field label{display:block;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.4rem;font-weight:500;}
+.panel-field input,.panel-field select{
+  width:100%;background:rgba(255,255,255,0.05);
+  border:1px solid rgba(26,110,252,0.2);color:var(--cream);
+  padding:0.78rem 1rem;font-size:0.85rem;outline:none;border-radius:8px;
+  transition:border-color 0.25s;-webkit-appearance:none;
+}
+.panel-field input::placeholder{color:rgba(212,220,255,0.25);}
+.panel-field input:focus,.panel-field select:focus{border-color:var(--azure);}
+.panel-field select option{background:var(--ink2);}
+.panel-row{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;}
+.panel-btn{width:100%;padding:1rem;margin-top:0.5rem;}
+.whatsapp-panel{
+  display:flex;align-items:center;gap:0.8rem;
+  background:rgba(0,240,200,0.06);border:1px solid rgba(0,240,200,0.2);
+  border-radius:10px;padding:0.9rem 1.1rem;margin-top:1rem;cursor:pointer;
+  transition:background 0.25s;
+}
+.whatsapp-panel:hover{background:rgba(0,240,200,0.12);}
+.wa-ico{font-size:1.4rem;}
+.wa-txt{font-size:0.72rem;color:var(--neon);}
+.wa-txt strong{display:block;font-size:0.8rem;font-weight:600;}
+
+/* ══ FEATURES BAR ══ */
+.features-bar{background:var(--ink2);padding:4rem 2rem;border-top:1px solid rgba(26,110,252,0.12);border-bottom:1px solid rgba(26,110,252,0.12);}
+.features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.feat-item{
+  padding:2.2rem 2rem;border-right:1px solid rgba(26,110,252,0.1);
+  transition:background 0.3s;position:relative;
+}
+.feat-item:last-child{border-right:none;}
+.feat-item:hover{background:var(--azure-dim);}
+.feat-icon{font-size:1.6rem;margin-bottom:1rem;}
+.feat-item h4{font-size:0.95rem;font-weight:600;color:var(--white);margin-bottom:0.5rem;}
+.feat-item p{font-size:0.77rem;line-height:1.75;color:var(--text-muted);}
+.feat-accent{position:absolute;top:0;left:0;width:3px;height:0;background:var(--azure);transition:height 0.3s;}
+.feat-item:hover .feat-accent{height:100%;}
+
+/* ══ HOME FLEET PREVIEW ══ */
+.home-fleet{background:var(--ink);padding:7rem 2rem;}
+.fleet-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;flex-wrap:wrap;gap:1.5rem;}
+.fleet-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;}
+.fleet-card{
+  background:var(--ink2);border:1px solid rgba(26,110,252,0.12);
+  overflow:hidden;transition:border-color 0.35s,transform 0.35s,box-shadow 0.35s;
+  cursor:pointer;border-radius:16px;
+}
+.fleet-card:hover{border-color:var(--azure-line);transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,0.3);}
+.fleet-img{height:210px;overflow:hidden;position:relative;background:var(--ink3);}
+.fleet-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;}
+.fleet-card:hover .fleet-img img{transform:scale(1.06);}
+.fleet-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,var(--ink2) 0%,transparent 60%);}
+.fleet-badge{
+  position:absolute;top:14px;left:14px;
+  background:var(--azure);color:var(--white);
+  font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;
+  padding:0.28rem 0.85rem;font-weight:600;border-radius:50px;
+}
+.fleet-info{padding:1.5rem;}
+.fleet-cat{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--azure2);margin-bottom:0.3rem;font-weight:500;}
+.fleet-name{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--white);margin-bottom:0.8rem;font-weight:700;}
+.fleet-specs{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.2rem;}
+.fleet-spec{font-size:0.68rem;letter-spacing:0.1em;color:var(--text-muted);background:rgba(26,110,252,0.1);padding:0.25rem 0.7rem;border-radius:50px;border:1px solid rgba(26,110,252,0.15);}
+.fleet-footer{display:flex;align-items:center;justify-content:space-between;padding-top:1rem;border-top:1px solid rgba(26,110,252,0.1);}
+.fleet-price .from{font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);}
+.fleet-price .amt{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--azure2);line-height:1;}
+.fleet-price .per{font-size:0.68rem;color:var(--text-muted);}
+
+/* ══ ABOUT STRIP ══ */
+.home-about{background:var(--ink3);padding:7rem 2rem;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
+.about-img-wrap{position:relative;height:520px;}
+.ai-main{position:absolute;top:0;left:0;width:72%;height:380px;object-fit:cover;border-radius:16px;}
+.ai-accent{position:absolute;bottom:0;right:0;width:56%;height:280px;object-fit:cover;border-radius:12px;border:4px solid var(--ink3);}
+.ai-badge{
+  position:absolute;top:50%;left:60%;transform:translate(-50%,-50%);
+  background:var(--ink);border:1px solid var(--azure-line);
+  padding:1.5rem 2rem;text-align:center;z-index:3;border-radius:12px;
+  backdrop-filter:blur(10px);
+}
+.ai-badge .y{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--azure2);line-height:1;}
+.ai-badge .yl{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);}
+.check-list{display:flex;flex-direction:column;gap:0.9rem;margin-top:2rem;}
+.check-item{display:flex;gap:0.8rem;align-items:flex-start;}
+.ci{
+  width:22px;height:22px;background:var(--azure-dim);border:1px solid var(--azure-line);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.65rem;color:var(--azure2);flex-shrink:0;margin-top:2px;border-radius:50%;
+}
+.check-item p{font-size:0.83rem;line-height:1.7;color:var(--text-dim);}
+.check-item strong{color:var(--white);}
+
+/* ══ TESTIMONIALS ══ */
+.home-testimonials{background:var(--ink);padding:7rem 2rem;}
+.test-header{text-align:center;margin-bottom:3.5rem;}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;}
+.test-card{
+  background:var(--ink2);border:1px solid rgba(26,110,252,0.1);
+  padding:2.5rem;border-radius:16px;transition:border-color 0.3s,transform 0.3s;
+}
+.test-card:hover{border-color:var(--azure-line);transform:translateY(-4px);}
+.test-stars{color:var(--azure2);font-size:0.9rem;letter-spacing:0.15em;margin-bottom:1rem;}
+.test-quote{font-family:'Playfair Display',serif;font-size:3.5rem;color:var(--azure-line);line-height:0.5;margin-bottom:1rem;}
+.test-text{font-size:0.85rem;line-height:1.85;color:var(--text-dim);font-family:'Tiro Tamil',serif;}
+.test-author{display:flex;align-items:center;gap:0.9rem;margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid rgba(26,110,252,0.1);}
+.test-avatar{width:38px;height:38px;background:var(--azure-dim);border:1px solid var(--azure-line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Tiro Tamil',serif;font-size:1rem;color:var(--azure2);flex-shrink:0;}
+.test-name{font-size:0.85rem;font-weight:600;color:var(--white);}
+.test-loc{font-size:0.68rem;color:var(--text-muted);margin-top:0.2rem;}
+
+/* ══ CTA ══ */
+.home-cta{position:relative;padding:7rem 2rem;overflow:hidden;background:var(--ink2);}
+.cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(26,110,252,0.15) 0%,transparent 70%);}
+.cta-inner{position:relative;z-index:2;max-width:700px;margin:0 auto;text-align:center;}
+.phone-big{
+  display:inline-flex;align-items:center;gap:0.8rem;
+  background:var(--azure-dim);border:1px solid var(--azure-line);
+  padding:0.8rem 2rem;border-radius:50px;margin-bottom:2rem;
+  font-size:1.4rem;font-weight:700;color:var(--azure2);letter-spacing:0.05em;
+  transition:var(--tr);cursor:pointer;
+}
+.phone-big:hover{background:var(--azure);color:var(--white);}
+
+/* ══ FOOTER ══ */
+footer{background:var(--ink2);border-top:1px solid rgba(26,110,252,0.15);}
+.footer-top{
+  max-width:1300px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;
+  padding:4rem 2.5rem;
+}
+.fb-logo{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:0.8rem;}
+.fb-desc{font-size:0.8rem;line-height:1.8;color:var(--text-muted);margin-bottom:1rem;}
+.fb-tamil{font-family:'Tiro Tamil',serif;font-size:0.85rem;color:var(--neon);opacity:0.7;}
+.footer-col h5{font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--azure2);margin-bottom:1.2rem;font-weight:600;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
+.footer-col ul li a,.footer-col ul li button{
+  background:none;border:none;text-align:left;padding:0;
+  font-size:0.8rem;color:var(--text-muted);transition:color 0.2s;cursor:pointer;
+}
+.footer-col ul li a:hover,.footer-col ul li button:hover{color:var(--azure2);}
+.footer-bottom{
+  border-top:1px solid rgba(26,110,252,0.1);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.5rem 2.5rem;max-width:1300px;margin:0 auto;
+}
+.footer-bottom p{font-size:0.75rem;color:var(--text-muted);}
+.footer-bottom span{color:var(--azure2);}
+.footer-socials{display:flex;gap:0.8rem;}
+.fsoc{
+  width:34px;height:34px;border:1px solid rgba(26,110,252,0.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.7rem;color:var(--text-muted);border-radius:8px;
+  transition:border-color 0.25s,color 0.25s;
+}
+.fsoc:hover{border-color:var(--azure);color:var(--azure2);}
+
+/* ══ FLEET PAGE ══ */
+.page-header{
+  padding:10rem 2rem 4rem;background:var(--ink2);
+  border-bottom:1px solid rgba(26,110,252,0.12);
+  text-align:center;position:relative;overflow:hidden;
+}
+.page-header::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at top center,rgba(26,110,252,0.12) 0%,transparent 60%);
+}
+.page-header>*{position:relative;z-index:1;}
+.fleet-page-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.car-full-card{
+  background:var(--ink2);border:1px solid rgba(26,110,252,0.12);
+  border-radius:20px;overflow:hidden;transition:border-color 0.3s,box-shadow 0.3s;
+}
+.car-full-card:hover{border-color:var(--azure-line);box-shadow:0 20px 50px rgba(0,0,0,0.3);}
+.car-full-gallery{position:relative;height:260px;background:var(--ink3);}
+.car-full-gallery img{width:100%;height:100%;object-fit:cover;}
+.car-full-badge{
+  position:absolute;top:16px;left:16px;
+  background:var(--azure);color:var(--white);
+  font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;
+  padding:0.28rem 0.9rem;font-weight:600;border-radius:50px;
+}
+.car-full-body{padding:2rem;}
+.car-full-cat{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--azure2);margin-bottom:0.3rem;font-weight:500;}
+.car-full-name{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--white);margin-bottom:0.3rem;font-weight:700;}
+.car-full-tamil{font-family:'Tiro Tamil',serif;font-size:0.85rem;color:rgba(0,240,200,0.5);font-style:italic;margin-bottom:1rem;}
+.car-full-desc{font-size:0.82rem;line-height:1.85;color:var(--text-muted);margin-bottom:1.2rem;}
+.car-specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:1.4rem;}
+.spec-item{display:flex;align-items:center;gap:0.6rem;padding:0.55rem 0.8rem;background:rgba(26,110,252,0.06);border:1px solid rgba(26,110,252,0.1);border-radius:8px;}
+.spec-icon{color:var(--azure2);font-size:0.85rem;width:16px;text-align:center;}
+.spec-txt{font-size:0.74rem;color:var(--text-dim);}
+.car-full-footer{display:flex;align-items:center;justify-content:space-between;padding-top:1.2rem;border-top:1px solid rgba(26,110,252,0.1);}
+.price-display .from{font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);}
+.price-display .amount{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--azure2);line-height:1;}
+.price-display .per{font-size:0.65rem;color:var(--text-muted);}
+
+/* ══ SERVICES PAGE ══ */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;}
+.srv-card{
+  background:var(--ink2);border:1px solid rgba(26,110,252,0.1);
+  padding:2.5rem;border-radius:16px;transition:border-color 0.3s,background 0.3s,transform 0.3s;
+}
+.srv-card:hover{border-color:var(--azure-line);background:rgba(26,110,252,0.06);transform:translateY(-4px);}
+.srv-icon{font-size:2.4rem;margin-bottom:1.5rem;}
+.srv-card h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--white);margin-bottom:0.3rem;font-weight:700;}
+.srv-card .srv-tamil{font-family:'Tiro Tamil',serif;font-size:0.8rem;color:var(--neon);opacity:0.6;margin-bottom:0.8rem;}
+.srv-card p{font-size:0.8rem;line-height:1.8;color:var(--text-muted);}
+.srv-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1.2rem;}
+.srv-tag{font-size:0.62rem;letter-spacing:0.1em;color:var(--azure2);background:var(--azure-dim);padding:0.22rem 0.65rem;border-radius:50px;border:1px solid var(--azure-line);}
+
+/* ══ PRICING PAGE ══ */
+.pricing-intro{max-width:600px;margin:0 auto;text-align:center;margin-bottom:4rem;}
+.pricing-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:4rem;}
+.tier{
+  background:var(--ink2);border:1px solid rgba(26,110,252,0.12);
+  padding:3rem 2rem;text-align:center;border-radius:20px;
+  transition:border-color 0.3s,transform 0.3s,box-shadow 0.3s;position:relative;overflow:hidden;
+}
+.tier:hover{border-color:var(--azure-line);transform:translateY(-4px);}
+.tier.featured{border-color:var(--azure);background:rgba(26,110,252,0.08);}
+.tier-badge-top{
+  position:absolute;top:0;left:0;right:0;
+  background:var(--azure);color:var(--white);
+  font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;
+  padding:0.35rem;font-weight:600;
+}
+.tier-icon{font-size:2.2rem;margin-bottom:1.5rem;}
+.tier-range{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.8rem;}
+.tier-price{font-family:'Playfair Display',serif;font-size:4rem;font-weight:700;color:var(--azure2);line-height:1;}
+.tier-price sub{font-size:1.3rem;font-family:'Outfit',sans-serif;font-weight:300;}
+.tier-price sup{font-size:1.6rem;}
+.tier-desc{font-size:0.78rem;line-height:1.8;color:var(--text-muted);margin-top:1rem;}
+.tier-tamil{font-family:'Tiro Tamil',serif;font-size:0.85rem;color:var(--neon);margin-top:0.8rem;font-style:italic;opacity:0.6;}
+
+/* Calculator */
+.calculator-section{background:var(--ink3);padding:5rem 2rem;}
+.calc-container{max-width:800px;margin:0 auto;}
+.calc-card{background:var(--ink2);border:1px solid var(--azure-line);padding:3.5rem;border-radius:20px;}
+.calc-top{text-align:center;margin-bottom:3rem;}
+.calc-top h2{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--white);margin-bottom:0.5rem;}
+.calc-top p{font-size:0.83rem;color:var(--text-muted);}
+.km-hero{text-align:center;margin-bottom:2.5rem;}
+.km-num{font-family:'Playfair Display',serif;font-size:5rem;font-weight:700;color:var(--azure2);line-height:1;}
+.km-unit{font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-muted);margin-top:0.3rem;}
+input[type=range]{
+  width:100%;-webkit-appearance:none;height:3px;border-radius:3px;
+  background:linear-gradient(to right,var(--azure) 0%,var(--azure) var(--pct,19%),rgba(255,255,255,0.1) var(--pct,19%),rgba(255,255,255,0.1) 100%);
+  outline:none;cursor:pointer;margin-bottom:0.8rem;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:22px;height:22px;
+  background:var(--azure);border-radius:50%;cursor:pointer;
+  box-shadow:0 0 12px rgba(26,110,252,0.5);border:2px solid var(--white);
+}
+.range-labels{display:flex;justify-content:space-between;}
+.range-labels span{font-size:0.62rem;color:var(--text-muted);letter-spacing:0.1em;}
+.calc-result-panel{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-top:2.5rem;}
+.crp-item{background:rgba(26,110,252,0.06);border:1px solid rgba(26,110,252,0.15);padding:1.5rem;text-align:center;border-radius:12px;}
+.crp-label{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem;}
+.crp-value{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--azure2);line-height:1;}
+.crp-sub{font-size:0.68rem;color:var(--text-muted);margin-top:0.3rem;}
+.calc-note{text-align:center;font-size:0.72rem;color:var(--text-muted);margin-top:1.5rem;line-height:1.7;font-style:italic;}
+
+/* ══ ABOUT PAGE ══ */
+.about-story{background:var(--cream);padding:7rem 2rem;}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.story-img-stack{position:relative;height:520px;}
+.si1{position:absolute;top:0;left:0;width:72%;height:380px;object-fit:cover;border-radius:16px;}
+.si2{position:absolute;bottom:0;right:0;width:56%;height:280px;object-fit:cover;border-radius:12px;border:5px solid var(--cream);}
+.si-year{
+  position:absolute;top:50%;left:60%;transform:translate(-50%,-50%);
+  background:var(--ink);border:1px solid var(--azure-line);
+  padding:1.5rem 2rem;text-align:center;z-index:3;border-radius:14px;
+}
+.si-year .y{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--azure2);line-height:1;}
+.si-year .yl{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);}
+.about-story .section-title.dark{color:var(--ink);}
+.about-story .section-title.dark em{color:var(--azure);}
+.about-story .section-sub.dark{color:#444;}
+.about-story .check-item p{color:#444;}
+.about-story .check-item strong{color:var(--ink);}
+.about-story .ci{background:rgba(26,110,252,0.1);border-color:rgba(26,110,252,0.3);}
+
+.about-stats{background:var(--ink);padding:5rem 2rem;}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.stat-box{
+  padding:2.5rem;text-align:center;border:1px solid rgba(26,110,252,0.12);
+  border-radius:16px;transition:border-color 0.3s,background 0.3s;
+}
+.stat-box:hover{border-color:var(--azure-line);background:var(--azure-dim);}
+.stat-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--azure2);line-height:1;}
+.stat-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-top:0.5rem;}
+.stat-tamil{font-family:'Tiro Tamil',serif;font-size:0.75rem;color:var(--neon);margin-top:0.3rem;font-style:italic;opacity:0.6;}
+
+.about-values{background:var(--ink2);padding:7rem 2rem;}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;}
+.val-item{background:var(--ink);border:1px solid rgba(26,110,252,0.1);padding:2.5rem;border-radius:16px;transition:border-color 0.3s,transform 0.3s;}
+.val-item:hover{border-color:var(--azure-line);transform:translateY(-4px);}
+.val-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:rgba(26,110,252,0.2);line-height:1;margin-bottom:1.5rem;}
+.val-item h4{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--white);margin-bottom:0.7rem;font-weight:700;}
+.val-item p{font-size:0.8rem;line-height:1.85;color:var(--text-muted);}
+
+/* ══ CONTACT PAGE ══ */
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;}
+.cinfo-block{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem;}
+.cinfo-item{display:flex;gap:1rem;align-items:flex-start;}
+.cinfo-icon{font-size:1.3rem;margin-top:2px;}
+.cinfo-text h5{font-size:0.78rem;font-weight:600;color:var(--white);margin-bottom:0.2rem;letter-spacing:0.05em;}
+.cinfo-text p{font-size:0.8rem;color:var(--text-muted);line-height:1.7;}
+.cinfo-text a{color:var(--text-muted);transition:color 0.2s;}
+.cinfo-text a:hover{color:var(--azure2);}
+.wa-cta{
+  display:flex;align-items:center;gap:1rem;
+  background:rgba(0,240,200,0.07);border:1px solid rgba(0,240,200,0.2);
+  padding:1.2rem 1.5rem;margin-top:2rem;cursor:pointer;border-radius:12px;
+  transition:background 0.3s;
+}
+.wa-cta:hover{background:rgba(0,240,200,0.14);}
+.wa-cta .wa-icon{font-size:1.8rem;}
+.wa-cta h5{color:var(--neon);font-size:0.85rem;font-weight:600;}
+.wa-cta p{font-size:0.75rem;color:var(--text-muted);}
+.contact-form-box{
+  background:var(--ink2);border:1px solid rgba(26,110,252,0.15);
+  padding:3rem;border-radius:20px;
+}
+.form-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--white);margin-bottom:0.3rem;}
+.form-sub{font-family:'Tiro Tamil',serif;font-size:0.85rem;color:var(--neon);opacity:0.65;margin-bottom:2rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-field{margin-bottom:1rem;}
+.form-field label{display:block;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.4rem;font-weight:500;}
+.form-field input,.form-field select,.form-field textarea{
+  width:100%;background:rgba(255,255,255,0.04);
+  border:1px solid rgba(26,110,252,0.18);color:var(--cream);
+  padding:0.8rem 1rem;font-size:0.85rem;outline:none;border-radius:10px;
+  transition:border-color 0.25s;-webkit-appearance:none;
+}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--azure);}
+.form-field input::placeholder,.form-field textarea::placeholder{color:rgba(212,220,255,0.2);}
+.form-field select option{background:var(--ink2);}
+.form-field textarea{height:110px;resize:vertical;}
+.form-submit{
+  width:100%;padding:1.1rem;background:var(--azure);color:var(--white);
+  border:none;font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;
+  font-weight:600;transition:var(--tr);border-radius:10px;
+  box-shadow:0 6px 24px rgba(26,110,252,0.3);
+}
+.form-submit:hover{background:var(--azure2);transform:translateY(-2px);box-shadow:var(--shadow-azure);}
+
+/* ══ MINI SLIDER ══ */
+.mini-slider{position:relative;width:100%;height:100%;}
+.ms-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.5s ease;}
+.ms-img.active{opacity:1;}
+.ms-prev,.ms-next{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:10;
+  background:rgba(10,14,26,0.6);border:none;color:#fff;
+  font-size:1.4rem;width:32px;height:32px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:background 0.2s;line-height:1;
+  backdrop-filter:blur(4px);
+}
+.ms-prev{left:8px;}
+.ms-next{right:8px;}
+.ms-prev:hover,.ms-next:hover{background:var(--azure);}
+.ms-dots{
+  position:absolute;bottom:10px;left:50%;transform:translateX(-50%);
+  display:flex;gap:6px;z-index:10;
+}
+.ms-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:rgba(255,255,255,0.4);cursor:pointer;transition:background 0.2s,transform 0.2s;border:none;
+}
+.ms-dot.active{background:#fff;transform:scale(1.2);}
+
+/* fleet 3-col responsive */
+@media(max-width:1024px){.fleet-three-grid{grid-template-columns:1fr 1fr !important;}}
+@media(max-width:600px){.fleet-three-grid{grid-template-columns:1fr !important;}}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:3rem;}
+  .hero-panel{max-width:500px;}
+  .fleet-cards,.fleet-page-grid,.services-grid,.test-grid,.values-grid{grid-template-columns:repeat(2,1fr);}
+  .features-grid,.stats-row,.pricing-tiers{grid-template-columns:repeat(2,1fr);}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .story-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:3rem;}
+  .about-img-wrap,.story-img-stack{height:380px;}
+}
+@media(max-width:768px){
+  .nav-links,.nav-book{display:none;}
+  .ham{display:flex;}
+  .fleet-cards,.fleet-page-grid,.services-grid,.test-grid,.values-grid,.pricing-tiers,.calc-result-panel{grid-template-columns:1fr;}
+  .features-grid{grid-template-columns:1fr 1fr;}
+  .stats-row{grid-template-columns:1fr 1fr;}
+  .section{padding:4rem 1.5rem;}
+  .footer-top{grid-template-columns:1fr;gap:2rem;padding:2.5rem 1.5rem;}
+  .footer-bottom{flex-direction:column;gap:1rem;text-align:center;padding:1.5rem;}
+  .form-row,.panel-row{grid-template-columns:1fr;}
+  .hero-inner{padding:3rem 1.5rem 4rem;}
+  .hero-badges{overflow-x:auto;}
+  .fleet-header{flex-direction:column;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-container">
+    <div class="nav-logo" onclick="showPage('home')">
+      <img src="logo_LT.png" alt="MK Travels Logo" onerror="this.style.display='none'"/>
+      <div class="nav-logo-text">
+        <div class="brand">MK Travels</div>
+        <div class="tagline">P.Velur, Namakkal</div>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" onclick="showPage('home');return false;">Home</a></li>
+      <li><button onclick="showPage('fleet')">Fleet</button></li>
+      <li><button onclick="showPage('services')">Services</button></li>
+      <li><button onclick="showPage('pricing')">Pricing</button></li>
+      <li><button onclick="showPage('about')">About</button></li>
+      <li><button onclick="showPage('contact')">Contact</button></li>
+    </ul>
+    <button class="nav-book" onclick="showPage('contact')">Book Now</button>
+    <button class="ham" onclick="openDrawer()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  <a href="#" onclick="showPage('home');closeDrawer();return false;">Home</a>
+  <button onclick="showPage('fleet');closeDrawer()">Fleet</button>
+  <button onclick="showPage('services');closeDrawer()">Services</button>
+  <button onclick="showPage('pricing');closeDrawer()">Pricing</button>
+  <button onclick="showPage('about');closeDrawer()">About</button>
+  <button onclick="showPage('contact');closeDrawer()">Contact</button>
+  <button onclick="showPage('contact');closeDrawer()" style="margin-top:1.5rem;background:var(--azure);color:var(--white);padding:0.9rem;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;border-radius:10px;border:none;">Book Now</button>
+</div>
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+<!-- ═══════════════════════════════ PAGE: HOME ═══════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <section class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Premium Car Rental Service</div>
+        <h1 class="hero-title">
+          <span class="tamil-line">உங்கள் பயணம், நம் பொறுப்பு</span>
+          Every Journey<br>Deserves <em>Comfort</em>
+        </h1>
+        <p class="hero-desc">MK Travels — P.Velur, Namakkal's trusted cab service. Safe, punctual, and affordable journeys to temples, cities, airports and beyond. Call us anytime.</p>
+        <div class="hero-cta">
+          <button class="btn-primary" onclick="showPage('contact')">Reserve Your Car</button>
+          <button class="btn-outline" onclick="showPage('fleet')">Explore Our Fleet</button>
+        </div>
+        <div class="hero-badges">
+          <div class="hbadge"><div class="n">10K+</div><div class="l">Happy Customers</div></div>
+          <div class="hbadge"><div class="n">24/7</div><div class="l">Support</div></div>
+          <div class="hbadge"><div class="n">3</div><div class="l">Premium Cars</div></div>
+          <div class="hbadge"><div class="n">₹14</div><div class="l">Per Km</div></div>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <div class="panel-title">Quick Booking</div>
+        <div class="panel-sub">உடனே பதிவு செய்யுங்கள்</div>
+        <div class="panel-row">
+          <div class="panel-field">
+            <label>Your Name</label>
+            <input type="text" placeholder="Full name"/>
+          </div>
+          <div class="panel-field">
+            <label>Phone</label>
+            <input type="tel" placeholder="+91 XXXXX XXXXX"/>
+          </div>
+        </div>
+        <div class="panel-field">
+          <label>Select Vehicle</label>
+          <select>
+            <option value="">Choose a car</option>
+            <option>Maruti WagonR — ₹14/km (5 seats)</option>
+            <option>Swift Dzire — ₹15/km (5 seats)</option>
+            <option>Maruti Ertiga — ₹16/km (7 seats)</option>
+            <option>Custom / Other Vehicle</option>
+          </select>
+        </div>
+        <div class="panel-row">
+          <div class="panel-field">
+            <label>Pickup Date</label>
+            <input type="date"/>
+          </div>
+          <div class="panel-field">
+            <label>Return Date</label>
+            <input type="date"/>
+          </div>
+        </div>
+        <div class="panel-field">
+          <label>From → Destination</label>
+          <input type="text" placeholder="e.g. Velur → Tirupati"/>
+        </div>
+        <button class="btn-primary panel-btn" onclick="quickBook()">Confirm Booking</button>
+        <div class="whatsapp-panel" onclick="window.open('https://wa.me/917402454545?text=Hello%20MK%20Travels!%20I%20want%20to%20book%20a%20cab.')">
+          <div class="wa-ico">💬</div>
+          <div class="wa-txt"><strong>WhatsApp Booking</strong>Chat with us — fastest response</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES BAR -->
+  <div class="features-bar">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feat-item reveal">
+          <div class="feat-accent"></div>
+          <div class="feat-icon">🛡️</div>
+          <h4>Fully Insured Fleet</h4>
+          <p>Every vehicle comprehensively insured and maintained to highest safety standards for total peace of mind.</p>
+        </div>
+        <div class="feat-item reveal">
+          <div class="feat-accent"></div>
+          <div class="feat-icon">⏱️</div>
+          <h4>Always Punctual</h4>
+          <p>Our drivers arrive ahead of schedule, every single time. Your time is our most valued priority.</p>
+        </div>
+        <div class="feat-item reveal">
+          <div class="feat-accent"></div>
+          <div class="feat-icon">💎</div>
+          <h4>No Hidden Charges</h4>
+          <p>What we quote is what you pay. Clear per-km pricing with zero surprises — always transparent.</p>
+        </div>
+        <div class="feat-item reveal">
+          <div class="feat-accent"></div>
+          <div class="feat-icon">📞</div>
+          <h4>24/7 Tamil Support</h4>
+          <p>Our team speaks Tamil & English. Call or WhatsApp 7402454545 anytime — we're here for you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLEET PREVIEW -->
+  <div class="home-fleet">
+    <div class="container">
+      <div class="fleet-header">
+        <div>
+          <div class="eyebrow">Our Fleet</div>
+          <h2 class="section-title">Handpicked <em>Vehicles</em><br>for Every Journey</h2>
+        </div>
+        <button class="btn-neon" onclick="showPage('fleet')">View Full Fleet →</button>
+      </div>
+      <div class="fleet-cards">
+        <!-- WagonR -->
+        <div class="fleet-card reveal" onclick="showPage('fleet')">
+          <div class="fleet-img">
+            <img src="wagonr1.jpg" alt="Maruti WagonR" loading="lazy"/>
+            <div class="fleet-img-overlay"></div>
+            <div class="fleet-badge">Popular</div>
+          </div>
+          <div class="fleet-info">
+            <div class="fleet-cat">Hatchback · 5 Seater</div>
+            <div class="fleet-name">Maruti WagonR</div>
+            <div class="fleet-specs">
+              <span class="fleet-spec">5 Seats</span>
+              <span class="fleet-spec">AC</span>
+              <span class="fleet-spec">Petrol / CNG</span>
+            </div>
+            <div class="fleet-footer">
+              <div class="fleet-price">
+                <div class="from">Starting From</div>
+                <span class="amt">₹14</span><span class="per"> /km</span>
+              </div>
+              <button class="btn-neon" onclick="event.stopPropagation();showPage('contact')">Book</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swift Dzire -->
+        <div class="fleet-card reveal" onclick="showPage('fleet')">
+          <div class="fleet-img" style="background:var(--ink3);display:flex;align-items:center;justify-content:center;">
+            <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/45691/dzire-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80" alt="Swift Dzire" loading="lazy" style="width:100%;height:100%;object-fit:cover;"/>
+            <div class="fleet-img-overlay"></div>
+            <div class="fleet-badge">Best Seller</div>
+          </div>
+          <div class="fleet-info">
+            <div class="fleet-cat">Compact Sedan · 5 Seater</div>
+            <div class="fleet-name">Swift Dzire</div>
+            <div class="fleet-specs">
+              <span class="fleet-spec">5 Seats</span>
+              <span class="fleet-spec">AC</span>
+              <span class="fleet-spec">Diesel / Petrol</span>
+            </div>
+            <div class="fleet-footer">
+              <div class="fleet-price">
+                <div class="from">Starting From</div>
+                <span class="amt">₹15</span><span class="per"> /km</span>
+              </div>
+              <button class="btn-neon" onclick="event.stopPropagation();showPage('contact')">Book</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ertiga with slider -->
+        <div class="fleet-card reveal" onclick="showPage('fleet')">
+          <div class="fleet-img" style="position:relative;">
+            <div class="mini-slider" id="homeErtigaSlider">
+              <img src="ertiga1.jpeg" class="ms-img active" alt="Ertiga 1"/>
+              <img src="ertiga2.jpeg" class="ms-img" alt="Ertiga 2"/>
+              <img src="ertiga3.jpeg" class="ms-img" alt="Ertiga Interior"/>
+            </div>
+            <button class="ms-prev" onclick="event.stopPropagation();miniSlide('homeErtigaSlider',-1)">‹</button>
+            <button class="ms-next" onclick="event.stopPropagation();miniSlide('homeErtigaSlider',1)">›</button>
+            <div class="fleet-img-overlay"></div>
+            <div class="fleet-badge">7 Seater</div>
+          </div>
+          <div class="fleet-info">
+            <div class="fleet-cat">MPV · Family · 7 Seater</div>
+            <div class="fleet-name">Maruti Ertiga</div>
+            <div class="fleet-specs">
+              <span class="fleet-spec">7 Seats</span>
+              <span class="fleet-spec">AC</span>
+              <span class="fleet-spec">Petrol</span>
+            </div>
+            <div class="fleet-footer">
+              <div class="fleet-price">
+                <div class="from">Starting From</div>
+                <span class="amt">₹16</span><span class="per"> /km</span>
+              </div>
+              <button class="btn-neon" onclick="event.stopPropagation();showPage('contact')">Book</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT STRIP -->
+  <div class="home-about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap reveal">
+          <img src="WhatsApp_Image_2026-04-06_at_11_38_26.jpeg" alt="MK Travels Car" class="ai-main" onerror="this.src='https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=700&q=80'"/>
+          <img src="WhatsApp_Image_2026-04-06_at_11_38_26__1_.jpeg" alt="MK Travels Interior" class="ai-accent" onerror="this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400&q=80'"/>
+          <div class="ai-badge">
+            <div class="y">20+</div>
+            <div class="yl">Years of Service</div>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="eyebrow">About MK Travels</div>
+          <h2 class="section-title">Trusted by Tamil Families<br>Across <em>Namakkal</em></h2>
+          <div class="divider"></div>
+          <p class="section-sub">From P.Velur, Namakkal — MK Travels serves with dedication, safety, and genuine care. We carry your family like our own. Every journey, every kilometre, with full responsibility.</p>
+          <div class="check-list">
+            <div class="check-item"><div class="ci">✓</div><p><strong>10,000+ customers</strong> served across Tamil Nadu with zero compromise on safety</p></div>
+            <div class="check-item"><div class="ci">✓</div><p><strong>Experienced local drivers</strong> who know every route — highway, city and hill roads</p></div>
+            <div class="check-item"><div class="ci">✓</div><p><strong>Transparent pricing</strong> — what we quote is what you pay, always</p></div>
+            <div class="check-item"><div class="ci">✓</div><p><strong>All districts covered</strong> — Kanyakumari to Chennai, Ooty to Rameswaram</p></div>
+          </div>
+          <div style="margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
+            <button class="btn-primary" onclick="showPage('about')">Our Story</button>
+            <button class="btn-outline" onclick="showPage('contact')">Contact Us</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="home-testimonials">
+    <div class="container">
+      <div class="test-header reveal">
+        <div class="eyebrow" style="justify-content:center;">Customer Reviews</div>
+        <h2 class="section-title">What Our Passengers <em>Say</em></h2>
+        <div class="divider center"></div>
+      </div>
+      <div class="test-grid">
+        <div class="test-card reveal">
+          <div class="test-stars">★★★★★</div>
+          <div class="test-quote">"</div>
+          <p class="test-text">Tirupati trip-க்கு WagonR book பண்ணினோம். Driver மிகவும் polite, on time வந்தார். Price exact-ஆ சொன்னதே கட்டினோம். மிகவும் satisfied! MK Travels best!</p>
+          <div class="test-author">
+            <div class="test-avatar">ர</div>
+            <div><div class="test-name">Ramesh Kumar</div><div class="test-loc">Namakkal, Tamil Nadu</div></div>
+          </div>
+        </div>
+        <div class="test-card reveal">
+          <div class="test-stars">★★★★★</div>
+          <div class="test-quote">"</div>
+          <p class="test-text">Family-ஆ 6 பேர் Madurai temple போனோம். Ertiga மிகவும் spacious-ஆ இருந்தது. Long journey comfortable-ஆ இருந்தது. Price reasonable. Best service!</p>
+          <div class="test-author">
+            <div class="test-avatar">ல</div>
+            <div><div class="test-name">Lakshmi Priya</div><div class="test-loc">Salem, Tamil Nadu</div></div>
+          </div>
+        </div>
+        <div class="test-card reveal">
+          <div class="test-stars">★★★★★</div>
+          <div class="test-quote">"</div>
+          <p class="test-text">4 years-ஆ office trips-க்கு MK Travels use பண்றேன். ஒரு முறை கூட disappoint பண்ணலை. Per-km pricing fair, drivers always punctual. 100% trust பண்ணலாம்!</p>
+          <div class="test-author">
+            <div class="test-avatar">வி</div>
+            <div><div class="test-name">Vijay Shankar</div><div class="test-loc">Erode, Tamil Nadu</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="home-cta">
+    <div class="cta-bg"></div>
+    <div class="cta-inner reveal">
+      <div class="eyebrow" style="justify-content:center;">Ready to Travel?</div>
+      <h2 class="section-title">Book Your Ride<br>in <em>Seconds</em></h2>
+      <div class="divider center"></div>
+      <p class="section-sub" style="text-align:center;margin:0 auto 2rem;">Call or WhatsApp us now. We'll confirm instantly and make your journey unforgettable.</p>
+      <div class="phone-big" onclick="window.open('tel:7402454545')">
+        📞 &nbsp;74024 54545
+      </div>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;">
+        <button class="btn-primary" onclick="showPage('contact')">Book Online</button>
+        <button class="btn-outline" onclick="showPage('pricing')">View Pricing</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="fb-logo">MK Travels</div>
+        <p class="fb-desc">Trusted car rental service from P.Velur, Namakkal. Serving families across Tamil Nadu with safe, comfortable and affordable journeys. Your trust is our greatest honour.</p>
+        <div class="fb-tamil">🛕 உங்கள் பயணம், நம் பொறுப்பு</div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="#" onclick="showPage('home');return false;">Home</a></li>
+          <li><button onclick="showPage('fleet')">Fleet</button></li>
+          <li><button onclick="showPage('services')">Services</button></li>
+          <li><button onclick="showPage('pricing')">Pricing</button></li>
+          <li><button onclick="showPage('about')">About</button></li>
+          <li><button onclick="showPage('contact')">Contact</button></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Our Cars</h5>
+        <ul>
+          <li><button onclick="showPage('fleet')">Maruti WagonR</button></li>
+          <li><button onclick="showPage('fleet')">Swift Dzire</button></li>
+          <li><button onclick="showPage('fleet')">Maruti Ertiga</button></li>
+          <li><button onclick="showPage('fleet')">Custom Request</button></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:7402454545">📞 7402 454 545</a></li>
+          <li><a href="mailto:mktravelsvelur@gmail.com">✉ mktravelsvelur@gmail.com</a></li>
+          <li><a href="#">📍 P.Velur, Namakkal, TN</a></li>
+          <li><a href="https://wa.me/917402454545">💬 WhatsApp Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 <span>MK Travels</span>. All rights reserved. P.Velur, Namakkal.</p>
+      <div class="footer-socials">
+        <a href="https://wa.me/917402454545" class="fsoc">W</a>
+        <a href="mailto:mktravelsvelur@gmail.com" class="fsoc">✉</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════ PAGE: FLEET ═══════════════════════════════ -->
+<div class="page" id="page-fleet">
+  <div class="page-header">
+    <div class="eyebrow" style="justify-content:center;">Our Vehicles</div>
+    <h1 class="section-title">Handpicked <em>Fleet</em> for Every Need</h1>
+    <div class="divider center"></div>
+    <p class="section-sub" style="margin:0 auto;text-align:center;color:var(--text-muted);">எல்லா பயணத்திற்கும் சரியான வாகனம் | The right vehicle for every journey</p>
+  </div>
+
+  <div class="section" style="background:var(--ink);">
+    <div class="container">
+      <!-- 3-column grid: WagonR, Dzire, Ertiga -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;" class="fleet-three-grid">
+
+        <!-- ── WagonR ── -->
+        <div class="car-full-card reveal">
+          <div class="car-full-gallery" style="position:relative;">
+            <div class="mini-slider" id="wagonrSlider">
+              <img src="wagonr1.jpg" class="ms-img active" alt="WagonR 1"/>
+              <img src="wagonr2.jpg" class="ms-img" alt="WagonR 2"/>
+              <img src="wagonr3.jpg" class="ms-img" alt="WagonR 3"/>
+            </div>
+            <button class="ms-prev" onclick="miniSlide('wagonrSlider',-1)">‹</button>
+            <button class="ms-next" onclick="miniSlide('wagonrSlider',1)">›</button>
+            <div class="ms-dots" id="wagonrDots">
+              <span class="ms-dot active" onclick="miniGoTo('wagonrSlider',0)"></span>
+              <span class="ms-dot" onclick="miniGoTo('wagonrSlider',1)"></span>
+              <span class="ms-dot" onclick="miniGoTo('wagonrSlider',2)"></span>
+            </div>
+            <div class="car-full-badge">Popular Choice</div>
+          </div>
+          <div class="car-full-body">
+            <div class="car-full-cat">Hatchback · 5 Seater</div>
+            <div class="car-full-name">Maruti WagonR</div>
+            <div class="car-full-tamil">பயணத்திற்கு சரியான தேர்வு</div>
+            <div class="car-full-desc">Comfortable, fuel-efficient and spacious for a hatchback. Perfect for city rides, short trips, temple visits and day outings.</div>
+            <div class="car-specs-grid">
+              <div class="spec-item"><div class="spec-icon">🪑</div><div class="spec-txt">5 Passengers</div></div>
+              <div class="spec-item"><div class="spec-icon">❄️</div><div class="spec-txt">Full AC</div></div>
+              <div class="spec-item"><div class="spec-icon">⛽</div><div class="spec-txt">Petrol / CNG</div></div>
+              <div class="spec-item"><div class="spec-icon">🧳</div><div class="spec-txt">Boot Space</div></div>
+            </div>
+            <div class="car-full-footer">
+              <div class="price-display">
+                <div class="from">Starting From</div>
+                <div><span class="amount">₹14</span><span class="per"> /km</span></div>
+              </div>
+              <button class="btn-primary" onclick="showPage('contact')">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Swift Dzire ── -->
+        <div class="car-full-card reveal">
+          <div class="car-full-gallery" style="position:relative;background:var(--ink3);">
+            <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/45691/dzire-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80" alt="Swift Dzire" style="width:100%;height:100%;object-fit:cover;"/>
+            <div class="car-full-badge">Best Seller</div>
+          </div>
+          <div class="car-full-body">
+            <div class="car-full-cat">Compact Sedan · 5 Seater</div>
+            <div class="car-full-name">Swift Dzire</div>
+            <div class="car-full-tamil">நம்பகமான செடான் கார்</div>
+            <div class="car-full-desc">Smooth, stylish and comfortable. The Swift Dzire is ideal for city commutes, airport transfers and inter-city travel with excellent boot space.</div>
+            <div class="car-specs-grid">
+              <div class="spec-item"><div class="spec-icon">🪑</div><div class="spec-txt">5 Passengers</div></div>
+              <div class="spec-item"><div class="spec-icon">❄️</div><div class="spec-txt">Full AC</div></div>
+              <div class="spec-item"><div class="spec-icon">⛽</div><div class="spec-txt">Diesel / Petrol</div></div>
+              <div class="spec-item"><div class="spec-icon">🧳</div><div class="spec-txt">Large Boot</div></div>
+            </div>
+            <div class="car-full-footer">
+              <div class="price-display">
+                <div class="from">Starting From</div>
+                <div><span class="amount">₹15</span><span class="per"> /km</span></div>
+              </div>
+              <button class="btn-primary" onclick="showPage('contact')">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Maruti Ertiga with slider ── -->
+        <div class="car-full-card reveal">
+          <div class="car-full-gallery" style="position:relative;">
+            <div class="mini-slider" id="ertigaSlider">
+              <img src="ertiga1.jpeg" class="ms-img active" alt="Ertiga Front"/>
+              <img src="ertiga2.jpeg" class="ms-img" alt="Ertiga Side"/>
+              <img src="ertiga3.jpeg" class="ms-img" alt="Ertiga Interior"/>
+            </div>
+            <button class="ms-prev" onclick="miniSlide('ertigaSlider',-1)">‹</button>
+            <button class="ms-next" onclick="miniSlide('ertigaSlider',1)">›</button>
+            <div class="ms-dots" id="ertigaDots">
+              <span class="ms-dot active" onclick="miniGoTo('ertigaSlider',0)"></span>
+              <span class="ms-dot" onclick="miniGoTo('ertigaSlider',1)"></span>
+              <span class="ms-dot" onclick="miniGoTo('ertigaSlider',2)"></span>
+            </div>
+            <div class="car-full-badge">7 Seater</div>
+          </div>
+          <div class="car-full-body">
+            <div class="car-full-cat">MPV · Family Special · 7 Seater</div>
+            <div class="car-full-name">Maruti Ertiga</div>
+            <div class="car-full-tamil">குடும்பத்திற்கான சிறந்த வாகனம்</div>
+            <div class="car-full-desc">Spacious 7-seater MPV with premium leather interiors. Perfect for family pilgrimages, group travel and long-distance journeys with maximum comfort.</div>
+            <div class="car-specs-grid">
+              <div class="spec-item"><div class="spec-icon">🪑</div><div class="spec-txt">7 Passengers</div></div>
+              <div class="spec-item"><div class="spec-icon">❄️</div><div class="spec-txt">Full AC</div></div>
+              <div class="spec-item"><div class="spec-icon">⛽</div><div class="spec-txt">Petrol</div></div>
+              <div class="spec-item"><div class="spec-icon">🛕</div><div class="spec-txt">Temple Trips</div></div>
+            </div>
+            <div class="car-full-footer">
+              <div class="price-display">
+                <div class="from">Starting From</div>
+                <div><span class="amount">₹16</span><span class="per"> /km</span></div>
+              </div>
+              <button class="btn-primary" onclick="showPage('contact')">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Custom Vehicle -->
+      <div style="background:var(--ink2);border:1px dashed rgba(26,110,252,0.3);padding:3rem;text-align:center;margin-top:2rem;border-radius:20px;">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--white);margin-bottom:0.8rem;font-weight:700;">Need a <em style="color:var(--azure2);">Different Vehicle?</em></h3>
+        <p style="font-size:0.88rem;line-height:1.8;color:var(--text-muted);max-width:500px;margin:0 auto 1.5rem;">Tell us your requirements — buses, minivans, or luxury sedans. We'll arrange the best vehicle for you at the best price.</p>
+        <div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem;">
+          <span style="border:1px solid var(--azure-line);color:var(--azure2);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.35rem 1rem;border-radius:50px;">Mini Bus</span>
+          <span style="border:1px solid var(--azure-line);color:var(--azure2);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.35rem 1rem;border-radius:50px;">Traveller</span>
+          <span style="border:1px solid var(--azure-line);color:var(--azure2);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.35rem 1rem;border-radius:50px;">Luxury Sedan</span>
+          <span style="border:1px solid var(--azure-line);color:var(--azure2);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.35rem 1rem;border-radius:50px;">SUV</span>
+        </div>
+        <button class="btn-primary" onclick="showPage('contact')">Request Custom Vehicle</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand"><div class="fb-logo">MK Travels</div><p class="fb-desc">Trusted car rental from P.Velur, Namakkal. Call: 7402454545</p><div class="fb-tamil">🛕 உங்கள் பயணம், நம் பொறுப்பு</div></div>
+      <div class="footer-col"><h5>Pages</h5><ul><li><button onclick="showPage('home')">Home</button></li><li><button onclick="showPage('fleet')">Fleet</button></li><li><button onclick="showPage('pricing')">Pricing</button></li><li><button onclick="showPage('contact')">Contact</button></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul><li><a href="tel:7402454545">📞 7402 454 545</a></li><li><a href="mailto:mktravelsvelur@gmail.com">✉ mktravelsvelur@gmail.com</a></li><li><a href="#">📍 P.Velur, Namakkal</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 <span>MK Travels</span>. All rights reserved.</p></div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════ PAGE: SERVICES ═══════════════════════════════ -->
+<div class="page" id="page-services">
+  <div class="page-header">
+    <div class="eyebrow" style="justify-content:center;">What We Offer</div>
+    <h1 class="section-title">Our <em>Services</em></h1>
+    <div class="divider center"></div>
+    <p class="section-sub" style="margin:0 auto;text-align:center;">சேவைகள் | From pilgrimages to airport drops — we cover every journey type</p>
+  </div>
+  <div class="section" style="background:var(--ink);">
+    <div class="container">
+      <div class="services-grid">
+        <div class="srv-card reveal">
+          <div class="srv-icon">🛕</div>
+          <h3>Temple Trips</h3>
+          <div class="srv-tamil">திருத்தலப் பயணம்</div>
+          <p>Tirupati, Madurai Meenakshi, Rameswaram, Palani, Sabarimala, Murugan temples and all major divya desams across South India.</p>
+          <div class="srv-tags"><span class="srv-tag">Tirupati</span><span class="srv-tag">Madurai</span><span class="srv-tag">Palani</span><span class="srv-tag">Rameswaram</span></div>
+        </div>
+        <div class="srv-card reveal">
+          <div class="srv-icon">✈️</div>
+          <h3>Airport Transfer</h3>
+          <div class="srv-tamil">விமான நிலைய சேவை</div>
+          <p>Reliable pickup & drop to Coimbatore, Chennai, Bangalore and Salem airports. On-time, every time — with real-time tracking.</p>
+          <div class="srv-tags"><span class="srv-tag">Coimbatore</span><span class="srv-tag">Chennai</span><span class="srv-tag">Bangalore</span><span class="srv-tag">Salem</span></div>
+        </div>
+        <div class="srv-card reveal">
+          <div class="srv-icon">💍</div>
+          <h3>Wedding & Events</h3>
+          <div class="srv-tamil">திருமண சேவை</div>
+          <p>Beautifully decorated cars for weddings, muhurtham days, engagements and reception events. Make every moment memorable.</p>
+          <div class="srv-tags"><span class="srv-tag">Decoration</span><span class="srv-tag">On-time</span><span class="srv-tag">Reliable</span></div>
+        </div>
+        <div class="srv-card reveal">
+          <div class="srv-icon">🏨</div>
+          <h3>Tour Packages</h3>
+          <div class="srv-tamil">சுற்றுலா</div>
+          <p>Ooty, Kodaikanal, Munnar, Coorg, and all Tamil Nadu tourism circuits. Multi-day packages at fixed affordable rates.</p>
+          <div class="srv-tags"><span class="srv-tag">Ooty</span><span class="srv-tag">Kodaikanal</span><span class="srv-tag">Munnar</span><span class="srv-tag">Coorg</span></div>
+        </div>
+        <div class="srv-card reveal">
+          <div class="srv-icon">🏥</div>
+          <h3>Medical Transport</h3>
+          <div class="srv-tamil">மருத்துவ பயணம்</div>
+          <p>Comfortable, stress-free transport for hospital visits, medical appointments, and patient transfers across Tamil Nadu.</p>
+          <div class="srv-tags"><span class="srv-tag">Hospital Visits</span><span class="srv-tag">Patient Safe</span><span class="srv-tag">Comfortable</span></div>
+        </div>
+        <div class="srv-card reveal">
+          <div class="srv-icon">💼</div>
+          <h3>Corporate Travel</h3>
+          <div class="srv-tamil">வணிக பயணம்</div>
+          <p>Professional, punctual travel for business meetings, office outings, and corporate events. Monthly packages available.</p>
+          <div class="srv-tags"><span class="srv-tag">Corporate</span><span class="srv-tag">Monthly</span><span class="srv-tag">Punctual</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand"><div class="fb-logo">MK Travels</div><p class="fb-desc">Call: 7402454545 | mktravelsvelur@gmail.com</p><div class="fb-tamil">🛕 உங்கள் பயணம், நம் பொறுப்பு</div></div>
+      <div class="footer-col"><h5>Pages</h5><ul><li><button onclick="showPage('home')">Home</button></li><li><button onclick="showPage('fleet')">Fleet</button></li><li><button onclick="showPage('contact')">Contact</button></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 <span>MK Travels</span>. All rights reserved.</p></div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════ PAGE: PRICING ═══════════════════════════════ -->
+<div class="page" id="page-pricing">
+  <div class="page-header">
+    <div class="eyebrow" style="justify-content:center;">Transparent Rates</div>
+    <h1 class="section-title">Simple <em>Pricing</em></h1>
+    <div class="divider center"></div>
+    <p class="section-sub" style="margin:0 auto;text-align:center;">விலை நிர்ணயம் | What we quote is what you pay — always transparent</p>
+  </div>
+  <div class="pricing-page section" style="background:var(--ink);">
+    <div class="container">
+      <div class="pricing-intro reveal">
+        <p class="section-sub" style="margin:0 auto;text-align:center;color:var(--text-muted);">Our distance-based slabs reward longer journeys with lower per-km rates. No surprises — ever.</p>
+      </div>
+      <div class="pricing-tiers">
+        <div class="tier reveal">
+          <div class="tier-icon">🏙️</div>
+          <div class="tier-range">0 – 200 km</div>
+          <div class="tier-price"><sup>₹</sup>17<sub>/km</sub></div>
+          <div class="tier-desc">City rides, local trips, temple runs within Tamil Nadu. Minimum 50 km applicable.</div>
+          <div class="tier-tamil">குறுகிய பயணம்</div>
+        </div>
+        <div class="tier featured reveal">
+          <div class="tier-badge-top">Most Popular</div>
+          <div class="tier-icon">🛣️</div>
+          <div class="tier-range">201 – 400 km</div>
+          <div class="tier-price"><sup>₹</sup>16<sub>/km</sub></div>
+          <div class="tier-desc">Intercity travel, temple pilgrimages, family outings between districts. Best value.</div>
+          <div class="tier-tamil">நடுத்தர தூரம்</div>
+        </div>
+        <div class="tier reveal">
+          <div class="tier-icon">🗺️</div>
+          <div class="tier-range">400+ km</div>
+          <div class="tier-price"><sup>₹</sup>15<sub>/km</sub></div>
+          <div class="tier-desc">Long distance journeys — Chennai, Bangalore, Hyderabad, Tirupati and beyond.</div>
+          <div class="tier-tamil">நீண்ட தூரம்</div>
+        </div>
+      </div>
+
+      <!-- Calculator -->
+      <div class="calculator-section" style="background:transparent;padding:0;margin-bottom:4rem;">
+        <div class="calc-container" style="max-width:100%;">
+          <div class="calc-card reveal">
+            <div class="calc-top">
+              <h2>Fare <em style="color:var(--azure2);">Calculator</em></h2>
+              <p>Drag the slider to estimate your trip cost instantly</p>
+            </div>
+            <div class="km-hero">
+              <div class="km-num" id="kmNum">150</div>
+              <div class="km-unit">kilometres</div>
+            </div>
+            <div class="range-wrap">
+              <input type="range" id="kmRange" min="10" max="800" value="150" oninput="calcFare(this.value)"/>
+              <div class="range-labels"><span>10 km</span><span>800 km</span></div>
+            </div>
+            <div class="calc-result-panel">
+              <div class="crp-item">
+                <div class="crp-label">Estimated Fare</div>
+                <div class="crp-value" id="fareVal">₹3,000</div>
+                <div class="crp-sub">One way</div>
+              </div>
+              <div class="crp-item">
+                <div class="crp-label">Rate Applied</div>
+                <div class="crp-value" id="rateVal">₹17</div>
+                <div class="crp-sub">Per kilometre</div>
+              </div>
+              <div class="crp-item">
+                <div class="crp-label">Category</div>
+                <div class="crp-value" id="distVal" style="font-size:1.4rem;">Short</div>
+                <div class="crp-sub" id="slabVal">Slab: 0–200 km</div>
+              </div>
+            </div>
+            <div class="calc-note">* Estimates are indicative. Final fare confirmed on booking. Driver bata & toll charges extra if applicable.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extras -->
+      <div class="extras-grid reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+        <div style="border:1px solid rgba(26,110,252,0.1);padding:2rem;border-radius:12px;background:var(--ink2);">
+          <div style="font-size:1.6rem;margin-bottom:1rem;">⛽</div>
+          <h4 style="font-size:1rem;color:var(--white);margin-bottom:0.5rem;">Fuel Included</h4>
+          <p style="font-size:0.78rem;line-height:1.8;color:var(--text-muted);">All our fares include fuel charges. No separate fuel billing — ever.</p>
+        </div>
+        <div style="border:1px solid rgba(26,110,252,0.1);padding:2rem;border-radius:12px;background:var(--ink2);">
+          <div style="font-size:1.6rem;margin-bottom:1rem;">🌙</div>
+          <h4 style="font-size:1rem;color:var(--white);margin-bottom:0.5rem;">Night Charges</h4>
+          <p style="font-size:0.78rem;line-height:1.8;color:var(--text-muted);">Night bata ₹200 applicable for trips starting or ending between 11 PM – 5 AM.</p>
+        </div>
+        <div style="border:1px solid rgba(26,110,252,0.1);padding:2rem;border-radius:12px;background:var(--ink2);">
+          <div style="font-size:1.6rem;margin-bottom:1rem;">🛣️</div>
+          <h4 style="font-size:1rem;color:var(--white);margin-bottom:0.5rem;">Tolls & Permits</h4>
+          <p style="font-size:0.78rem;line-height:1.8;color:var(--text-muted);">State entry permits and toll charges are charged at actuals and shared transparently.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand"><div class="fb-logo">MK Travels</div><p class="fb-desc">Call: 7402454545 | mktravelsvelur@gmail.com</p><div class="fb-tamil">🛕 உங்கள் பயணம், நம் பொறுப்பு</div></div>
+      <div class="footer-col"><h5>Pages</h5><ul><li><button onclick="showPage('home')">Home</button></li><li><button onclick="showPage('fleet')">Fleet</button></li><li><button onclick="showPage('contact')">Contact</button></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 <span>MK Travels</span>. All rights reserved.</p></div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════ PAGE: ABOUT ═══════════════════════════════ -->
+<div class="page" id="page-about">
+  <div class="page-header">
+    <div class="eyebrow" style="justify-content:center;">Our Story</div>
+    <h1 class="section-title">About <em>MK Travels</em></h1>
+    <div class="divider center"></div>
+  </div>
+  <div class="about-story">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-img-stack reveal">
+          <img src="WhatsApp_Image_2026-04-06_at_11_38_25.jpeg" class="si1" alt="MK Travels Car"/>
+          <img src="WhatsApp_Image_2026-04-06_at_11_38_26__1_.jpeg" class="si2" alt="Interior"/>
+          <div class="si-year"><div class="y">2011</div><div class="yl">Est. Year</div></div>
+        </div>
+        <div class="reveal">
+          <div class="eyebrow">P.Velur, Namakkal</div>
+          <h2 class="section-title dark">Built on <em>Trust</em><br>& Family Values</h2>
+          <div class="divider"></div>
+          <p class="section-sub dark" style="max-width:100%;">MK Travels was founded with one simple promise — to give every family a safe, comfortable, and honest travel experience. From P.Velur, Namakkal, we've grown to serve customers across Tamil Nadu while keeping that personal, family-first approach.</p>
+          <div class="check-list" style="margin-top:1.5rem;">
+            <div class="check-item"><div class="ci">✓</div><p><strong>10,000+ customers</strong> served across Tamil Nadu without a single complaint on pricing</p></div>
+            <div class="check-item"><div class="ci">✓</div><p><strong>Experienced, licensed drivers</strong> who know every route, highway, and hill road</p></div>
+            <div class="check-item"><div class="ci">✓</div><p><strong>Zero hidden charges</strong> — what we quote is what you pay, guaranteed</p></div>
+            <div class="check-item"><div class="ci">✓</div><p><strong>Deep community roots</strong> in Namakkal — we're your neighbours, not just a cab service</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-stats">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat-box reveal"><div class="stat-num">10K+</div><div class="stat-label">Happy Customers</div><div class="stat-tamil">மகிழ்ச்சியான வாடிக்கையாளர்கள்</div></div>
+        <div class="stat-box reveal"><div class="stat-num">10+</div><div class="stat-label">Years of Service</div><div class="stat-tamil">சேவையில் ஆண்டுகள்</div></div>
+        <div class="stat-box reveal"><div class="stat-num">5</div><div class="stat-label">Cars in Fleet</div><div class="stat-tamil">வாகன எண்ணிக்கை</div></div>
+        <div class="stat-box reveal"><div class="stat-num">32</div><div class="stat-label">Districts Covered</div><div class="stat-tamil">மாவட்டங்கள்</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-values">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem;">
+        <div class="eyebrow" style="justify-content:center;">Our Values</div>
+        <h2 class="section-title">What We <em>Stand For</em></h2>
+      </div>
+      <div class="values-grid">
+        <div class="val-item reveal">
+          <div class="val-num">01</div>
+          <h4>Safety First</h4>
+          <p>Every car is regularly serviced, insured, and maintained. Driver safety training and responsible driving are non-negotiable at MK Travels.</p>
+        </div>
+        <div class="val-item reveal">
+          <div class="val-num">02</div>
+          <h4>Radical Honesty</h4>
+          <p>We quote a price and we stick to it. No last-minute additions, no surprise bills. Our reputation is built on this one simple principle.</p>
+        </div>
+        <div class="val-item reveal">
+          <div class="val-num">03</div>
+          <h4>Family First Care</h4>
+          <p>We treat every passenger like family. Comfortable, clean vehicles, patient drivers, and always looking out for your wellbeing on the road.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand"><div class="fb-logo">MK Travels</div><p class="fb-desc">Call: 7402454545 | mktravelsvelur@gmail.com | P.Velur, Namakkal</p><div class="fb-tamil">🛕 உங்கள் பயணம், நம் பொறுப்பு</div></div>
+      <div class="footer-col"><h5>Pages</h5><ul><li><button onclick="showPage('home')">Home</button></li><li><button onclick="showPage('fleet')">Fleet</button></li><li><button onclick="showPage('contact')">Contact</button></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 <span>MK Travels</span>. All rights reserved.</p></div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════ PAGE: CONTACT ═══════════════════════════════ -->
+<div class="page" id="page-contact">
+  <div class="page-header">
+    <div class="eyebrow" style="justify-content:center;">Get in Touch</div>
+    <h1 class="section-title">Let's Plan Your <em>Journey</em></h1>
+    <div class="divider center"></div>
+  </div>
+  <div class="section" style="background:var(--ink);">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info-side reveal">
+          <div class="eyebrow">Contact Details</div>
+          <h2 class="section-title" style="font-size:2rem;margin-bottom:2rem;">We're Always <em>Here</em></h2>
+          <div class="cinfo-block">
+            <div class="cinfo-item"><div class="cinfo-icon">📍</div><div class="cinfo-text"><h5>Location</h5><p>P.Velur, Namakkal<br>Tamil Nadu, India</p></div></div>
+            <div class="cinfo-item"><div class="cinfo-icon">📞</div><div class="cinfo-text"><h5>Phone</h5><p><a href="tel:7402454545">+91 7402 454 545</a><br>Available 6 AM – 10 PM daily</p></div></div>
+            <div class="cinfo-item"><div class="cinfo-icon">✉️</div><div class="cinfo-text"><h5>Email</h5><p><a href="mailto:mktravelsvelur@gmail.com">mktravelsvelur@gmail.com</a></p></div></div>
+            <div class="cinfo-item"><div class="cinfo-icon">🕐</div><div class="cinfo-text"><h5>Working Hours</h5><p>Every day: 6:00 AM – 10:00 PM<br>24/7 WhatsApp support</p></div></div>
+          </div>
+          <div class="wa-cta" onclick="window.open('https://wa.me/917402454545?text=Hello%20MK%20Travels!%20I%20want%20to%20book%20a%20car.')">
+            <span class="wa-icon">💬</span>
+            <div><h5>WhatsApp Booking</h5><p>Tap to chat — fastest response guaranteed</p></div>
+          </div>
+        </div>
+
+        <div class="contact-form-box reveal">
+          <div class="form-title">Send an Enquiry</div>
+          <div class="form-sub">உங்கள் பயணத்தை திட்டமிடுங்கள்</div>
+          <div class="form-row">
+            <div class="form-field"><label>Your Name</label><input type="text" id="cf-name" placeholder="Full name"/></div>
+            <div class="form-field"><label>Phone / WhatsApp</label><input type="tel" id="cf-phone" placeholder="+91 XXXXX XXXXX"/></div>
+          </div>
+          <div class="form-field"><label>Email (Optional)</label><input type="email" id="cf-email" placeholder="you@example.com"/></div>
+          <div class="form-row">
+            <div class="form-field"><label>Pickup Date</label><input type="date" id="cf-date1"/></div>
+            <div class="form-field"><label>Return Date</label><input type="date" id="cf-date2"/></div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Car Preference</label>
+              <select id="cf-car">
+                <option value="">Select a vehicle</option>
+                <option>Maruti WagonR — ₹20/km (5 seats)</option>
+                <option>Swift Dzire — ₹20/km (5 seats)</option>
+                <option>Maruti Ertiga — ₹20/km (7 seats)</option>
+                <option>Custom Vehicle — Describe below</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Approx. Distance</label>
+              <select>
+                <option value="">Select range</option>
+                <option>Under 100 km</option>
+                <option>100–200 km (₹20/km)</option>
+                <option>201–400 km (₹19/km)</option>
+                <option>Above 400 km (₹17/km)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>From → To / Trip Details</label>
+            <textarea id="cf-msg" placeholder="e.g. P.Velur → Tirupati, 4 adults, temple visit..."></textarea>
+          </div>
+          <button class="form-submit" onclick="submitContactForm()">Confirm Booking Request</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand"><div class="fb-logo">MK Travels</div><p class="fb-desc">Trusted car rental service from P.Velur, Namakkal. Your trust is our greatest honour.</p><div class="fb-tamil">🛕 உங்கள் பயணம், நம் பொறுப்பு</div></div>
+      <div class="footer-col"><h5>Pages</h5><ul><li><button onclick="showPage('home')">Home</button></li><li><button onclick="showPage('fleet')">Fleet</button></li><li><button onclick="showPage('services')">Services</button></li><li><button onclick="showPage('pricing')">Pricing</button></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul><li><a href="tel:7402454545">📞 7402 454 545</a></li><li><a href="mailto:mktravelsvelur@gmail.com">✉ mktravelsvelur@gmail.com</a></li><li><a href="#">📍 P.Velur, Namakkal</a></li><li><a href="https://wa.me/917402454545">💬 WhatsApp Us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 <span>MK Travels</span>. All rights reserved.</p><div class="footer-socials"><a href="https://wa.me/917402454545" class="fsoc">W</a><a href="mailto:mktravelsvelur@gmail.com" class="fsoc">✉</a></div></div>
+  </footer>
+</div>
+
+<!-- ═══════════ JAVASCRIPT ═══════════ -->
+<script>
+// ─ PAGE ROUTING ─
+const pageMap={home:'page-home',fleet:'page-fleet',services:'page-services',pricing:'page-pricing',about:'page-about',contact:'page-contact'};
+const navBtns=document.querySelectorAll('.nav-links a,.nav-links button');
+
+function showPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const page=document.getElementById(pageMap[name]);
+  if(page){page.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});updateNav(name);setTimeout(initReveal,200);}
+}
+function updateNav(name){
+  navBtns.forEach(b=>{b.classList.remove('active-link');const t=b.textContent.trim().toLowerCase();if(t===name||(name==='home'&&t==='home'))b.classList.add('active-link');});
+}
+
+// ─ NAV SCROLL ─
+window.addEventListener('scroll',()=>{document.getElementById('main-nav').classList.toggle('scrolled',window.scrollY>60);});
+
+// ─ MOBILE DRAWER ─
+function openDrawer(){const d=document.getElementById('mobileDrawer');d.classList.add('open');d.style.display='flex';document.getElementById('drawerOverlay').classList.add('show');}
+function closeDrawer(){const d=document.getElementById('mobileDrawer');d.classList.remove('open');document.getElementById('drawerOverlay').classList.remove('show');setTimeout(()=>{if(!d.classList.contains('open'))d.style.display='none';},400);}
+
+// ─ REVEAL ─
+function initReveal(){
+  const items=document.querySelectorAll('.page.active .reveal');
+  const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+  items.forEach((el,i)=>{el.style.transitionDelay=(i%6)*0.07+'s';obs.observe(el);});
+}
+initReveal();
+
+// ─ CALCULATOR ─
+function calcFare(km){
+  km=parseInt(km);
+  document.getElementById('kmNum').textContent=km;
+  let rate,slab,cat;
+  if(km<=200){rate=20;slab='Slab: 0–200 km';cat='Short';}
+  else if(km<=400){rate=19;slab='Slab: 201–400 km';cat='Medium';}
+  else{rate=17;slab='Slab: 400+ km';cat='Long';}
+  document.getElementById('fareVal').textContent='₹'+( km*rate).toLocaleString('en-IN');
+  document.getElementById('rateVal').textContent='₹'+rate;
+  document.getElementById('slabVal').textContent=slab;
+  document.getElementById('distVal').textContent=cat;
+  const slider=document.getElementById('kmRange');
+  if(slider)slider.style.setProperty('--pct',((km-10)/(800-10)*100)+'%');
+}
+setTimeout(()=>{const s=document.getElementById('kmRange');if(s)calcFare(150);},300);
+
+// ─ QUICK BOOK ─
+function quickBook(){
+  const name = document.querySelector('.panel-field input[type=text]').value.trim();
+  const phone = document.querySelector('.panel-field input[type=tel]').value.trim();
+  const vehicle = document.querySelector('.panel-field select').value;
+  const date1 = document.querySelectorAll('.panel-field input[type=date]')[0].value;
+  const date2 = document.querySelectorAll('.panel-field input[type=date]')[1].value;
+  const route = document.querySelector('.panel-field input[placeholder*="Velur"]').value.trim();
+
+  if(!name || !phone){
+    alert('Please enter your name and phone number.');
+    return;
+  }
+
+  // WhatsApp message format
+  const message = `Hello MK Travels! 👋
+
+🚗 *New Booking Request*
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+🚘 Vehicle: ${vehicle || "Not selected"}
+📅 Pickup Date: ${date1 || "-"}
+📅 Return Date: ${date2 || "-"}
+📍 Trip: ${route || "-"}
+
+Please confirm my booking 🙏`;
+
+  // Encode message
+  const encodedMsg = encodeURIComponent(message);
+
+  // Open WhatsApp
+  window.open(`https://wa.me/917402454545?text=${encodedMsg}`, '_blank');
+}
+
+// ─ MINI SLIDER ─
+const sliderState={};
+function miniSlide(id,dir){
+  const wrap=document.getElementById(id);
+  if(!wrap)return;
+  const imgs=wrap.querySelectorAll('.ms-img');
+  if(!sliderState[id])sliderState[id]=0;
+  imgs[sliderState[id]].classList.remove('active');
+  sliderState[id]=(sliderState[id]+dir+imgs.length)%imgs.length;
+  imgs[sliderState[id]].classList.add('active');
+  updateDots(id,sliderState[id]);
+}
+function miniGoTo(id,idx){
+  const wrap=document.getElementById(id);
+  if(!wrap)return;
+  const imgs=wrap.querySelectorAll('.ms-img');
+  if(sliderState[id]!==undefined)imgs[sliderState[id]].classList.remove('active');
+  sliderState[id]=idx;
+  imgs[idx].classList.add('active');
+  updateDots(id,idx);
+}
+function updateDots(sliderId,activeIdx){
+  const dotsEl=document.getElementById(sliderId.replace('Slider','Dots'));
+  if(!dotsEl)return;
+  dotsEl.querySelectorAll('.ms-dot').forEach((d,i)=>d.classList.toggle('active',i===activeIdx));
+}
+// Auto-advance sliders every 3s
+setInterval(()=>{['ertigaSlider','wagonrSlider','homeErtigaSlider'].forEach(id=>{if(document.getElementById(id))miniSlide(id,1);});},3000);
+
+// ─ CONTACT FORM ─
+function submitContactForm(){
+  const n=document.getElementById('cf-name').value.trim();
+  const p=document.getElementById('cf-phone').value.trim();
+  if(!n||!p){alert('Please fill in your name and phone number.');return;}
+  alert('🙏 நன்றி, '+n+'!\n\nYour enquiry has been received.\nMK Travels will contact '+p+' within 1 hour.\n\nஉங்கள் பயணம், நம் பொறுப்பு!\n📞 7402454545\n✉ mktravelsvelur@gmail.com');
+  ['cf-name','cf-phone','cf-email','cf-date1','cf-date2','cf-car','cf-msg'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+}
+</script>
+</body>
+</html>
